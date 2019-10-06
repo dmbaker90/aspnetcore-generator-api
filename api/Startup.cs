@@ -27,7 +27,7 @@ namespace api
         {
             services.AddMvc()
                 .AddXmlSerializerFormatters();
-                
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Generate Random Data API", Version = "v1" });
@@ -42,7 +42,7 @@ namespace api
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Generate Random Data API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Generate Random Data API V1 test1");
             });
 
             var redirectRootToSwagger = new RewriteOptions()
