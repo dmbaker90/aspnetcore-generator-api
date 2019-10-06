@@ -12,6 +12,7 @@ RUN dotnet restore tests/tests.csproj
 # copy src
 COPY . .
 # test  If tests don't pass we don't get image (it doesn't matter if we have test in build file because it all gets throw away in second stage for runtime optimization)
+ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test tests/tests.csproj
 # publish
 RUN dotnet publish api/api.csproj -o /publish
